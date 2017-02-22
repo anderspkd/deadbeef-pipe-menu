@@ -1,0 +1,32 @@
+#+TITLE: DeadBeef pipe menu for openbox
+
+As the title says: A pipe menu for controlling DeadBeef.
+
+* Usage
+
+  Include the following ~menu~ element somewhere in your
+  ~openbox_menu~ definition in ~menu.xml~
+
+  #+begin_src: xml
+  <menu id="someId" label="someLabel" execute="/path/to/db-pipe.py"/>
+  #+end_src
+
+  Can optionally be supplied a directory containing playlists with the
+  ~-p~ switch.
+
+* Functionality
+
+  DeadBeef doesn't really support that many functions from a
+  commandline (unless I missed something). Currently supports
+
+  - Playing a playlist (if started with ~-p /some/playlist/dir~.
+  - Toggle play/pause.
+  - Go to next song.
+  - Go to previous song.
+  - Select random song
+  - Stop song
+
+  Obviously also supports quitting out of deadbeef.
+
+  The menu has two different layouts, depending on whether or not
+  deadbeef is currently running.

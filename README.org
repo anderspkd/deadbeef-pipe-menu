@@ -1,6 +1,6 @@
 #+TITLE: DeadBeef pipe menu for openbox
 
-As the title says: A pipe menu for controlling DeadBeef.
+As the title says: A pipe menu for controlling [[http://deadbeef.sourceforge.net/][DeadBeef]].
 
 * Usage
 

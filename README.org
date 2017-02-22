@@ -19,7 +19,7 @@ As the title says: A pipe menu for controlling DeadBeef.
   DeadBeef doesn't really support that many functions from a
   commandline (unless I missed something). Currently supports
 
-  - Playing a playlist (if started with ~-p /some/playlist/dir~.
+  - Playing a playlist (if started with ~-p /some/playlist/dir~).
   - Toggle play/pause.
   - Go to next song.
   - Go to previous song.

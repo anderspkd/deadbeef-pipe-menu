@@ -30,3 +30,11 @@ As the title says: A pipe menu for controlling [[http://deadbeef.sourceforge.net
 
   The menu has two different layouts, depending on whether or not
   deadbeef is currently running.
+
+* Screenshots
+
+  #+CAPTION: Dead
+  [[./img/dead.png]]
+
+  #+CAPTION: Running
+  [[./img/alive.png]]

@@ -61,8 +61,8 @@ if __name__ == '__main__':
     def item(**a):
         return create_element('item', parent=top, **a)
 
-    b = is_alivebeef()  # to avoid calling run repeatedly
-    if b:
+    running = is_alivebeef()  # to avoid calling run repeatedly
+    if running:
         display_str = query_deadbeef('%artist% - %title%')
         create_element('separator', parent=top, label=display_str)
         create_cmd_action(item(label='play/pause'), 'deadbeef --play-pause')
@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
     # if we have a playlist dir, let us select entries from it
     if playlists:
-        if b:
+        if running:
             create_element('separator', parent=top)
             pl_menu = create_element('menu', parent=top, label='playlists', id='_pl')
         else:
@@ -85,7 +85,7 @@ if __name__ == '__main__':
             pl_menu = top
         create_playlists(pl_menu)
 
-    if b:
+    if running:
         create_element('separator', parent=top)
         create_cmd_action(item(label='quit'), 'deadbeef --quit')
 

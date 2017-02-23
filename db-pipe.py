@@ -14,10 +14,12 @@ def run(cmd, **args):
 
 
 def query_deadbeef(fmt):
-    cp = run(['deadbeef', '--nowplaying-tf', '%isplaying%:'+fmt])
-    # Consider using something else than ":"
-    s = str(cp.stdout, 'utf-8').split(':')
-    return len(s[0]) > 0, s[1]
+    cp = run(['deadbeef', '--nowplaying-tf', '%isplaying%'+fmt])
+    s = str(cp.stdout, 'utf-8')
+    if s.startswith('1'):
+        return s[1:]
+    else:
+        return '[cricket sounds]'
 
 
 def is_alivebeef():
@@ -61,11 +63,8 @@ if __name__ == '__main__':
 
     b = is_alivebeef()  # to avoid calling run repeatedly
     if b:
-        isplaying, display_str = query_deadbeef('%artist% - %title%')
-        if isplaying:
-            create_element('separator', parent=top, label=display_str)
-        else:
-            create_element('separator', parent=top, label="[cricket sounds]")
+        display_str = query_deadbeef('%artist% - %title%')
+        create_element('separator', parent=top, label=display_str)
         create_cmd_action(item(label='play/pause'), 'deadbeef --play-pause')
         create_cmd_action(item(label='next'),       'deadbeef --next')
         create_cmd_action(item(label='prev'),       'deadbeef --prev')

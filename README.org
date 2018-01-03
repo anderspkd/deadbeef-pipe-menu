@@ -35,7 +35,3 @@ As the title says: A pipe menu for controlling [[http://deadbeef.sourceforge.net
 
   | [[./img/dead.png]] | [[./img/alive.png]] |
   | Dead               | Running             |
-
-  If DeadBeef is running but no song is currently playing (i.e.,
-  stopped), the title displayed will be ~[cricket sounds]~. Can be
-  changed by changing the string returned on line 22.
